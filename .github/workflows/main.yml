@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test with flake and django tests:
+  test_with_flake8_and_django_tests:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -47,7 +47,7 @@ jobs:
   build_backend_and_push_to_docker_hub:
     name: Push backend Docker image to DockerHub
     runs-on: ubuntu-latest
-    needs: test with flake and django tests
+    needs: test_with_flake8_and_django_tests
 
     steps:
       - name: Check out the repo
